@@ -1,0 +1,37 @@
+$buttonBg: rgb(41, 121, 255);
+$buttonFocusBg: rgb(16, 76, 180);
+$white: rgb(255, 255, 255);
+$formBorder: rgb(211, 211, 211);
+
+.form {
+  display: flex;
+  border-top: 2px solid $formBorder;
+
+  .input {
+    width: 80%;
+    padding: 3%;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .sendButton {
+    width: 20%;
+    border: none;
+    color: $white;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    background: $buttonBg;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+      background: $buttonFocusBg;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+$background: rgb(26, 26, 29);
+$buttonBg: rgb(41, 121, 255);
+$buttonFocusBg: rgb(16, 76, 180);
+$white: rgb(255, 255, 255);
+
+@mixin sm {
+  @media (min-width: 320px) and (max-width: 480px) {
+    @content;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.joinOuterContainer {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: $background;
+
+  @include sm {
+    height: 100%;
+  }
+
+  .joinInnerContainer {
+    width: 20%;
+
+    @include sm {
+      width: 90%;
+    }
+
+    .mt-20 {
+      margin-top: 20px;
+    }
+
+    .heading {
+      color: $white;
+      font-size: 2.5em;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $white;
+    }
+
+    .joinInput {
+      width: 100%;
+      border-radius: 0;
+      padding: 15px 20px;
+    }
+
+    .button {
+      width: 100%;
+      border: none;
+      color: $white;
+      padding: 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      background: $buttonBg;
+      display: inline-block;
+      text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+        background: $buttonFocusBg;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}

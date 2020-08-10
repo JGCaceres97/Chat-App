@@ -1,0 +1,81 @@
+$backgroundBlue: rgb(41, 121, 255);
+$backgroundLight: rgb(243, 243, 243);
+$colorDark: rgb(53, 53, 53);
+$textColor: rgb(130, 130, 130);
+$white: rgb(255, 255, 255);
+
+.marginP {
+  margin-block-start: 0.1em;
+  margin-block-end: 0.1em;
+}
+
+.messageContainer {
+  display: flex;
+  padding: 0 5%;
+  margin-top: 3px;
+
+  &.justifyStart {
+    justify-content: flex-start;
+  }
+
+  &.justifyEnd {
+    justify-content: flex-end;
+  }
+
+  .messageBox {
+    background: $backgroundLight;
+    color: $white;
+    max-width: 80%;
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: inline-block;
+
+    &.backgroundBlue {
+      background: $backgroundBlue;
+    }
+
+    &.backgroundLight {
+      background: $backgroundLight;
+    }
+
+    .messageText {
+      width: 100%;
+      float: left;
+      font-size: 1.1em;
+      letter-spacing: 0;
+      word-wrap: break-word;
+
+      &.colorWhite {
+        color: $white;
+      }
+
+      &.colorDark {
+        color: $colorDark;
+      }
+
+      &.marginP {
+        @extend .marginP;
+      }
+    }
+  }
+
+  .sentText {
+    display: flex;
+    color: $textColor;
+    align-items: center;
+    letter-spacing: 0.3px;
+    font-family: Helvetica;
+
+    &.pl-10 {
+      padding-left: 10px;
+    }
+
+    &.pr-10 {
+      padding-right: 10px;
+    }
+
+    &.marginP {
+      @extend .marginP;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+$white: rgb(255, 255, 255);
+
+@mixin md {
+  @media (min-width: 320px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+.textContainer {
+  height: 60%;
+  display: flex;
+  color: $white;
+  margin-left: 100px;
+  flex-direction: column;
+
+  .info {
+    margin-bottom: 2em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+
+  @include md {
+    display: none;
+  }
+
+  .activeContainer {
+    display: flex;
+    align-items: center;
+
+    .activeItem {
+      display: flex;
+      align-items: center;
+
+      & img {
+        padding-left: 10px;
+      }
+    }
+  }
+}
